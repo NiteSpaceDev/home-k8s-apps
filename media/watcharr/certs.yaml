@@ -1,0 +1,26 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: local-watcharr
+spec:
+  secretName: watcharr-local-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "watcharr.nite.name"
+  dnsNames:
+  - "watcharr.nite.name"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: public-watcharr
+spec:
+  secretName: watcharr-public-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "watcharr.nitehawk.me"
+  dnsNames:
+  - "watcharr.nitehawk.me"

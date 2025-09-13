@@ -4,3 +4,7 @@ namespace: watcharr
 resources:
   - namespace.yaml
   - volume.yaml
+  - certs.yaml
+  - watcharr.yaml
+  - service.yaml
+  - traefik-local.yaml

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: watcharr
+spec:
+  selector:
+    matchLabels:
+      app: watcharr
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: watcharr
+    spec:
+      containers:
+        - name: watcharr
+          image: ghcr.io/sbondco/watcharr:latest
+          volumeMounts:
+            - name: watcharr-volume
+              mountPath: /data
+      volumes:
+        - name: watcharr-volume
+          persistentVolumeClaim:
+            claimName: watcharr-pv-claim
