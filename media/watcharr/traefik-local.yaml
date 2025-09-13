@@ -4,7 +4,7 @@ kind: IngressRoute
 metadata:
   name: watcharr-internal
   annotations: 
-    external-dns.alpha.kubernetes.io/target: watcharr.nite.name
+    external-dns.alpha.kubernetes.io/target: tflan.nite.name
     kubernetes.io/ingress.class: traefik-lan
 spec:
   entryPoints:

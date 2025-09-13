@@ -8,3 +8,4 @@ resources:
   - watcharr.yaml
   - service.yaml
   - traefik-local.yaml
+  - traefik-cloudflare.yaml
