@@ -3,3 +3,4 @@ kind: Kustomization
 namespace: watcharr
 resources:
   - namespace.yaml
+  - volume.yaml
