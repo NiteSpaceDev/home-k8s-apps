@@ -16,3 +16,20 @@ spec:
           port: 3080
   tls:
     secretName: watcharr-public-tls
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: watcharr-public
+  annotations: 
+    kubernetes.io/ingress.class: traefik-cloudflare
+    external-dns.alpha.kubernetes.io/target: 5196f111-e3f4-44f0-bbb1-c2da7015f9af.cfargotunnel.com
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`watcharr.nitehawk.me`)
+      kind: Rule
+      services:
+        - name: watcharr-web
+          port: 3080
