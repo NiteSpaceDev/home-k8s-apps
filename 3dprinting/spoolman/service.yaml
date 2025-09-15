@@ -24,10 +24,10 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`spool.nite.name`)
+    - match: Host(`spoolman.nite.name`)
       kind: Rule
       services:
         - name: spoolman-web
           port: 8000
   tls:
-    secretName: spoolman-local-tls-tmp
+    secretName: spoolman-local-tls
