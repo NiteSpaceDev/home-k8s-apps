@@ -10,3 +10,16 @@ spec:
   commonName: "spoolman.nite.name"
   dnsNames:
   - "spoolman.nite.name"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: local-spoolman-tmp
+spec:
+  secretName: spoolman-local-tls-tmp
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "spool.nite.name"
+  dnsNames:
+  - "spool.nite.name"

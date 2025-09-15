@@ -30,4 +30,4 @@ spec:
         - name: spoolman-web
           port: 8000
   tls:
-    secretName: spoolman-local-tls
+    secretName: spoolman-local-tls-tmp
