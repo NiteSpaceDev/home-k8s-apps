@@ -18,7 +18,7 @@ kind: IngressRoute
 metadata:
   name: spoolman-internal
   annotations: 
-    kubernetes.io/ingress.class: traefik-external
+    kubernetes.io/ingress.class: traefik-lan
     external-dns.alpha.kubernetes.io/target: tflan.nite.name
 spec:
   entryPoints:
