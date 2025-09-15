@@ -4,7 +4,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: spoolman-pvc
   labels:
-    app: watcharr
+    app: spoolman
 spec:
   storageClassName: ceph-filesystem
   accessModes:

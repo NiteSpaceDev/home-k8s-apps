@@ -1,0 +1,33 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: spoolman-web
+spec:
+  ports:
+    - name: http
+      port: 8000
+      targetPort: 8000
+      protocol: TCP
+  selector:
+    app: spoolman
+  type: ClusterIP
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: spoolman-internal
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external
+    external-dns.alpha.kubernetes.io/target: tflan.nite.name
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`spool.nite.name`)
+      kind: Rule
+      services:
+        - name: spoolman-web
+          port: 8000
+  tls:
+    secretName: spoolman-local-tls

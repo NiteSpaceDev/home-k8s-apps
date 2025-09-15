@@ -4,3 +4,6 @@ namespace: spoolman
 resources:
   - namespace.yaml
   - volume.yaml
+  - certs.yaml
+  - spoolman.yaml
+  - service.yaml
