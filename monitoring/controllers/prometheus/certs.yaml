@@ -1,0 +1,25 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: local-prometheus-graphana-dashboard
+spec:
+  secretName: prometheus-graphana-web-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "graph.nite.name"
+  dnsNames:
+  - "graph.nite.name"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: local-prometheus-dashboard
+spec:
+  secretName: prometheus-web-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "prom.nite.name"
+  dnsNames:
+  - "prom.nite.name"
